@@ -22,13 +22,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6d7d8063896053e46a3b8986364ac714
-    m_Address: Assets/Scenes/GamePlay.unity
+  - m_GUID: e8af31e0ef696994c8c1ec7913193ec5
+    m_Address: Assets/Scenes/MainMenu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e8af31e0ef696994c8c1ec7913193ec5
-    m_Address: Assets/Scenes/MainMenu.unity
+  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
+    m_Address: Assets/Scenes/GamePlay.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
