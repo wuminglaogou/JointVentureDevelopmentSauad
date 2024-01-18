@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         inputcontrol = new PlayerInputControl();
+        inputcontrol.Player.Jump.performed += Jump;
     }
     void Start()
     {
@@ -53,12 +54,17 @@ public class PlayerControl : MonoBehaviour
 
     private void Move()
     {
-      rb.velocity=new Vector2(inputdirection.x*Speed*Time.deltaTime*2,inputdirection.y);
+        rb.velocity=new Vector2(inputdirection.x*Speed*Time.deltaTime*2,inputdirection.y);
         faceDir = (int)transform.localScale.x;
         if (inputdirection.x > 0)
             faceDir = 3;
         if (inputdirection.x < 0)
             faceDir = -3;
         transform.localScale = new Vector3(faceDir, 3, 1);
+    }
+    private void Jump(InputAction.CallbackContext context)
+    {
+        rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);
+        Debug.Log("1");
     }
 }

@@ -288,7 +288,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""21d06342-ffc1-47b8-9bda-3e07d86096ec"",
-                    ""path"": ""<Keyboard>/quote"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
