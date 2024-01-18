@@ -1,4 +1,0 @@
-repository "2024WORK@wuminglaogou@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
