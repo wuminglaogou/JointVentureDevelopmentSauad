@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ef3b021c4897546b06cd7533456ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableTime: 1
+  disableTime: 0.3
   disableTeleporter: 0
 --- !u!1 &1756478051
 GameObject:
