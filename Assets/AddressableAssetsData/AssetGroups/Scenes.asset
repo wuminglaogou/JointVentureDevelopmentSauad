@@ -17,18 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f8b57d0adbaee6d408e0c6025677814b
   m_SerializeEntries:
-  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
-    m_Address: MainMenu
+  - m_GUID: bcb78b559e422464ea8c41577a51e7c7
+    m_Address: Assets/Scenes/Initialize.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9096193202e05e64983322fa6ca584dd
-    m_Address: GamePlay
+  - m_GUID: 6d7d8063896053e46a3b8986364ac714
+    m_Address: Assets/Scenes/GamePlay.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b4a250227d304d442bf825cfb413273d
-    m_Address: Initialize
+  - m_GUID: e8af31e0ef696994c8c1ec7913193ec5
+    m_Address: Assets/Scenes/MainMenu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
