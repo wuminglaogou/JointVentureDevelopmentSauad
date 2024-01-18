@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 1489983344}
   - component: {fileID: 1489983343}
   - component: {fileID: 1489983342}
+  - component: {fileID: 1489983347}
   m_Layer: 0
   m_Name: Run (32x32)_0
   m_TagString: Untagged
@@ -438,7 +439,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -449,7 +450,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1489983344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -511,12 +512,35 @@ Transform:
   m_GameObject: {fileID: 1489983341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76, y: -2.99, z: 0}
+  m_LocalPosition: {x: -4.22, y: -2.75, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489983347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489983341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634d396789a7ed84fa089349d6538906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputdirection: {x: 0, y: 0}
+  Speed: 300
+  Fast: 0
+  JumpForce: 8
+  hurtforce: 0
+  isHurt: 0
+  isdead: 0
+  isattack: 0
+  wall: {fileID: 0}
+  normal: {fileID: 0}
+  isattack1: {fileID: 0}
 --- !u!1 &1773022991
 GameObject:
   m_ObjectHideFlags: 0
