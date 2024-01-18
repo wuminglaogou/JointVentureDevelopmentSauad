@@ -287,7 +287,7 @@ MonoBehaviour:
   inputdirection: {x: 0, y: 0}
   Speed: 80
   Fast: 0
-  JumpForce: 20
+  JumpForce: 200
   hurtforce: 0
   isHurt: 0
   isdead: 0
