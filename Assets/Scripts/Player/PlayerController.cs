@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopMoving(InputAction.CallbackContext context)
     {
-        rb.velocity = Vector2.zero;
+        rb.velocity = new Vector2(0,rb.velocity.y);
     }
 
     private void Moving(InputAction.CallbackContext context)
