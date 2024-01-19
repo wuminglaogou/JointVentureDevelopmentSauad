@@ -30,20 +30,20 @@ public class CharacterManager : Singleton<CharacterManager>
         characters.Add(newCharacter);
 
         // 切换到新角色
-        SwitchToNextCharacter();
+        SwitchToNewCharacter();
     }
 
-    public void SwitchToNewCharacterWithBuffet()
+    public void SwitchToNewCharacter()
     {      
         activeCharacterIndex = characters.Count-1;
-        ActivateCurrentCharacterWithBuffet();      
+        ActivateActivateCharacterWithIndex();      
     }
     public void SwitchToNextCharacter()
     {
         if (characters.Count > 1)
         {
             activeCharacterIndex = (activeCharacterIndex + 1) % characters.Count; // 循环切换
-            ActivateActivateCurrentCharacter();
+            ActivateActivateCharacterWithIndex();
         }
     }
     public void DeleteCurrentCharacter()
@@ -57,7 +57,7 @@ public class CharacterManager : Singleton<CharacterManager>
         activeCharacterIndex = 0;
         characters[activeCharacterIndex].enabled = true;
     }
-    public void ActivateActivateCurrentCharacter()
+    public void ActivateActivateCharacterWithIndex()
     {
         for (int i = 0; i < characters.Count; i++)
         {
@@ -69,21 +69,21 @@ public class CharacterManager : Singleton<CharacterManager>
             }
         }
     }
-    private void ActivateCurrentCharacterWithBuffet()
-    {
-        for (int i = 0; i < characters.Count; i++)
-        {            
-            if (i == activeCharacterIndex)
-            {
-                StartCoroutine(buffetTimeCoroutine(i));
+    //private void ActivateCurrentCharacterWithBuffet()
+    //{
+    //    for (int i = 0; i < characters.Count; i++)
+    //    {            
+    //        if (i == activeCharacterIndex)
+    //        {
+    //            StartCoroutine(buffetTimeCoroutine(i));
                 
-                //Camera.main.GetComponent<CameraFollow>().Target = characters[i].transform; // 跟随当前角色
-            }
-        }
-    }
-    IEnumerator buffetTimeCoroutine(int characterIndex)
-    {
-        yield return new WaitForSeconds(buffetTime);
-        characters[characterIndex].enabled = true;
-    }
+    //            //Camera.main.GetComponent<CameraFollow>().Target = characters[i].transform; // 跟随当前角色
+    //        }
+    //    }
+    //}
+    //IEnumerator buffetTimeCoroutine(int characterIndex)
+    //{
+    //    yield return new WaitForSeconds(buffetTime);
+    //    characters[characterIndex].enabled = true;
+    //}
 }
