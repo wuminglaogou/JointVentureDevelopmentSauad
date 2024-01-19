@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class physicalcheck : MonoBehaviour
+public class Physicalcheck : MonoBehaviour
 {
 
     private Rigidbody2D rb;

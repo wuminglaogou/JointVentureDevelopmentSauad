@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GamePlay
   m_EditorClassIdentifier: 
   sceneReference:
-    m_AssetGUID: 8c9cfa26abfee488c85f1582747f6a02
+    m_AssetGUID: fd2ad02b5e0c61f4dbda79f6e3ef5301
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 1
+    m_EditorAssetChanged: 0
