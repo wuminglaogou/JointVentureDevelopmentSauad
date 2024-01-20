@@ -14,14 +14,16 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     [Header("基本参数")]
     public float speed, Fast = 0;
+    public float MinSpeed;
     public float jumpForce;
     public float hurtforce;
     public bool isHurt;
     public bool isdead;
-    public bool isattack;
     private int limit = 1;
     [Header("引用")]
     public AudioData jumpSFX;
+    public GameObject Box;
+    private Boolean isActive = true;
     private Playerinputcontrol inputcontrol;
     private Rigidbody2D rb;
     private Physicalcheck physicalcheck1;
@@ -50,14 +52,17 @@ public class PlayerController : MonoBehaviour
 
     private void Moving(InputAction.CallbackContext context)
     {
-        inputdirection=(context.ReadValue<Vector2>()).normalized;
-        rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
-        faceDir = transform.localScale.x;
-        if (inputdirection.x > 0)
-            faceDir = 4f;
-        if (inputdirection.x < 0)
-            faceDir = -4f;
-        transform.localScale = new Vector3(faceDir, 4, 1);
+        if (isActive)
+        {
+            inputdirection = (context.ReadValue<Vector2>()).normalized;
+            rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
+            faceDir = transform.localScale.x;
+            if (inputdirection.x > 0)
+                faceDir = 4f;
+            if (inputdirection.x < 0)
+                faceDir = -4f;
+            transform.localScale = new Vector3(faceDir, 4, 1);
+        }
     }
 
     private void OnEnable()
@@ -74,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         //inputdirection = (inputcontrol.GamePlay.Move.ReadValue<Vector2>()).normalized;
         rb.gravityScale = 3.5f;
+        Trans(Box);
     }
     private void DeleteCurrent(InputAction.CallbackContext context)
     {
@@ -126,5 +132,19 @@ public class PlayerController : MonoBehaviour
             AudioManager.Instance.PlayAudio(jumpSFX);
         }
 
+    }
+    public void Trans(GameObject gameObject)
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameObject.SetActive(isActive);
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            if (isActive)
+                speed = 0;
+            else
+                speed = MinSpeed;
+            isActive = !isActive;
+        }
+        
     }
 }
