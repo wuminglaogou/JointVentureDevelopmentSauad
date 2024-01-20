@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool isdead;
     private int limit = 1;
     [Header("ÒýÓÃ")]
+    public Coroutine movingCoroutine;
     public AudioData jumpSFX;
     public GameObject Box;
     private Boolean isActive = true;
@@ -47,14 +48,26 @@ public class PlayerController : MonoBehaviour
 
     private void StopMoving(InputAction.CallbackContext context)
     {
-        rb.velocity = new Vector2(0,rb.velocity.y);
+        if (movingCoroutine != null)
+        {
+            StopCoroutine(movingCoroutine);
+        }
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        inputdirection = Vector2.zero;
     }
 
     private void Moving(InputAction.CallbackContext context)
     {
-        if (isActive)
+        inputdirection = (context.ReadValue<Vector2>()).normalized;
+
+        movingCoroutine = StartCoroutine(nameof(MovingCoroutine));
+
+    }
+    IEnumerator MovingCoroutine()
+    {
+        while (true)
         {
-            inputdirection = (context.ReadValue<Vector2>()).normalized;
+            Debug.Log("enter");
             rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
             faceDir = transform.localScale.x;
             if (inputdirection.x > 0)
@@ -62,6 +75,7 @@ public class PlayerController : MonoBehaviour
             if (inputdirection.x < 0)
                 faceDir = -4f;
             transform.localScale = new Vector3(faceDir, 4, 1);
+            yield return null;
         }
     }
 
