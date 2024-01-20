@@ -42,6 +42,7 @@ public class CharacterManager : Singleton<CharacterManager>
     {
         if (characters.Count > 1)
         {
+            characters[activeCharacterIndex].enabled = false;
             activeCharacterIndex = (activeCharacterIndex + 1) % characters.Count; // Ñ­»·ÇÐ»»
             ActivateActivateCharacterWithIndex();
         }

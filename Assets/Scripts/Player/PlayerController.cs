@@ -107,7 +107,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
         CharacterManager.Instance.SwitchToNextCharacter();
-        this.enabled = false;
     }
 
     private void Split(InputAction.CallbackContext context)
