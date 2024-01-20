@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
 {
     [Header("状态")]
     public float faceDir;
+    public float PlayerSize;
     public bool isaddjump = false;
     public bool jumppressed;
     public Vector2 inputdirection;
+    public bool isclimb=false;
+    public bool issplit = false;
     // Start is called before the first frame update
     [Header("基本参数")]
     public float speed, Fast = 0;
@@ -80,10 +83,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
             faceDir = transform.localScale.x;
             if (inputdirection.x > 0)
-                faceDir = 4f;
+                faceDir =PlayerSize;
             if (inputdirection.x < 0)
-                faceDir = -4f;
-            transform.localScale = new Vector3(faceDir, 4, 1);
+                faceDir = -PlayerSize;
+            transform.localScale = new Vector3(faceDir, PlayerSize, 1);
             yield return null;
         }
     }
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour
         //inputdirection = (inputcontrol.GamePlay.Move.ReadValue<Vector2>()).normalized;
         rb.gravityScale = 3.5f;
         Trans(Box);
+        issplit = false;
     }
     private void DeleteCurrent(InputAction.CallbackContext context)
     {
@@ -120,9 +124,11 @@ public class PlayerController : MonoBehaviour
 
     private void Split(InputAction.CallbackContext context)
     {
+        issplit = true;
         Vector2 mousePositionViewportSpace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos=(mousePositionViewportSpace-new Vector2(transform.position.x,transform.position.y)).normalized;
         CharacterManager.Instance.Split(transform.position, mousePos);
+        
     }
     private void FixedUpdate()
     {
@@ -147,6 +153,14 @@ public class PlayerController : MonoBehaviour
                 limit = 1;
 
             }
+            if(isaddjump==true)//上墙后到落地任意时间点都额外都一段跳跃
+            {
+                rb.gravityScale = 0;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                limit--;
+                AudioManager.Instance.PlayAudio(jumpSFX);
+                isaddjump = false;
+            }
             if (physicalcheck1.isGround || limit >= 0)
             {
                 rb.gravityScale = 0;
@@ -154,17 +168,7 @@ public class PlayerController : MonoBehaviour
                 limit--;
                 AudioManager.Instance.PlayAudio(jumpSFX);
             }
-            else
-            {
-                if(isaddjump==true)
-                {
-                    rb.gravityScale = 0;
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    limit--;
-                    AudioManager.Instance.PlayAudio(jumpSFX);
-                    isaddjump = false;
-                }
-            }
+           
         }
 
     }
@@ -185,7 +189,12 @@ public class PlayerController : MonoBehaviour
     public void AddJump()
     {
         isaddjump = true;
-       
+        isclimb = true;
+    }
+    public void CancelClimb()
+    {
+        isclimb=false;
+        //isaddjump=false;只在墙壁时多段跳跃，但手感不好
     }
 
 }
