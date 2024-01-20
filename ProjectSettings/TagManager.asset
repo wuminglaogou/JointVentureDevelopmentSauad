@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Teleporter
   - TeleporterDoor
+  - disguise
+  - climb wall
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - UI
   - Player
   - wall
-  - 
+  - disguise
   - 
   - 
   - 

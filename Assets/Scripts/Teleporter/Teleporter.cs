@@ -23,4 +23,5 @@ public class Teleporter : MonoBehaviour
     {
         gameObject.SetActive(!isActive);
     }
+   
 }

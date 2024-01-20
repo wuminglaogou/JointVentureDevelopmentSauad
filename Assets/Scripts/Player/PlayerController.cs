@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("״̬")]
     public float faceDir;
+    public bool isaddjump = false;
     public bool jumppressed;
     public Vector2 inputdirection;
     // Start is called before the first frame update
@@ -48,26 +49,34 @@ public class PlayerController : MonoBehaviour
 
     private void StopMoving(InputAction.CallbackContext context)
     {
-        if (movingCoroutine != null)
+
+        if (isActive)
         {
-            StopCoroutine(movingCoroutine);
+            if (movingCoroutine != null)
+            {
+                StopCoroutine(movingCoroutine);
+            }
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            inputdirection = Vector2.zero;
         }
-        rb.velocity = new Vector2(0, rb.velocity.y);
-        inputdirection = Vector2.zero;
+        
     }
 
     private void Moving(InputAction.CallbackContext context)
     {
-        inputdirection = (context.ReadValue<Vector2>()).normalized;
+        if (isActive)
+        {
+            inputdirection = (context.ReadValue<Vector2>()).normalized;
 
-        movingCoroutine = StartCoroutine(nameof(MovingCoroutine));
+            movingCoroutine = StartCoroutine(nameof(MovingCoroutine));
+        }
 
     }
     IEnumerator MovingCoroutine()
     {
         while (true)
         {
-            Debug.Log("enter");
+           
             rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
             faceDir = transform.localScale.x;
             if (inputdirection.x > 0)
@@ -131,18 +140,31 @@ public class PlayerController : MonoBehaviour
     //}
     private void Jump(InputAction.CallbackContext context)
     {
-
-        if (physicalcheck1.isGround)
+        if (isActive)
         {
-            limit = 1;
+            if (physicalcheck1.isGround)
+            {
+                limit = 1;
 
-        }
-        if (physicalcheck1.isGround || limit >= 0)
-        {
-            rb.gravityScale = 0;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            limit--;
-            AudioManager.Instance.PlayAudio(jumpSFX);
+            }
+            if (physicalcheck1.isGround || limit >= 0)
+            {
+                rb.gravityScale = 0;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                limit--;
+                AudioManager.Instance.PlayAudio(jumpSFX);
+            }
+            else
+            {
+                if(isaddjump==true)
+                {
+                    rb.gravityScale = 0;
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    limit--;
+                    AudioManager.Instance.PlayAudio(jumpSFX);
+                    isaddjump = false;
+                }
+            }
         }
 
     }
@@ -151,13 +173,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             gameObject.SetActive(isActive);
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(0, 0);
             if (isActive)
                 speed = 0;
             else
                 speed = MinSpeed;
             isActive = !isActive;
+            inputdirection.x = 0;
         }
-        
     }
+    public void AddJump()
+    {
+        isaddjump = true;
+       
+    }
+
 }
