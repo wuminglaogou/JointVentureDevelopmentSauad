@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerTeleporter : MonoBehaviour
 {
@@ -8,9 +10,13 @@ public class PlayerTeleporter : MonoBehaviour
     public float disableTime;//可设置传送之后的无法传送时间
     private float disableCounter;
     public bool disableTeleporter;//表示能否传送
+    public float findDistance;
+    public UnityEvent OnFindingDoor;
+    public GameObject door;
 
     void Update()
     {
+        FindDoor(door);
         if (disableTeleporter)
         {
             disableCounter -= Time.deltaTime;
@@ -48,6 +54,17 @@ public class PlayerTeleporter : MonoBehaviour
         {
             disableTeleporter = true;
             disableCounter = disableTime;
+        }
+    }
+
+    public void FindDoor(GameObject gameObject)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if(gameObject.tag=="TeleporterDoor"&&Vector2.Distance(gameObject.transform.position,transform.position)<=findDistance)
+            {
+                OnFindingDoor?.Invoke();
+            }
         }
     }
 }
