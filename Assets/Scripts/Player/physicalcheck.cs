@@ -41,7 +41,7 @@ public class Physicalcheck : MonoBehaviour
     public void check()
     {
         //ºÏ≤‚µÿ√Ê
-        isGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, checkRaduis);
+        isGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, checkRaduis,groundlayer);
         TouchLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, checkRaduis, groundlayer);
         TouchRightWall = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, checkRaduis, groundlayer);
     }

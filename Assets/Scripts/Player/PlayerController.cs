@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputdirection;
     public bool isclimb=false;
     public bool issplit = false;
+    public bool XAccelerate = false;
+    public bool YAccelerate = false;
+    public float XAcclerateSpeed;
+    public float YAcclerateSpeed;
+
     // Start is called before the first frame update
     [Header("基本参数")]
     public float speed, Fast = 0;
@@ -59,7 +64,14 @@ public class PlayerController : MonoBehaviour
             {
                 StopCoroutine(movingCoroutine);
             }
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            if (XAccelerate == false && YAccelerate == false)
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            if (XAccelerate == true && YAccelerate == false)
+                rb.velocity = new Vector2(0 + XAcclerateSpeed, rb.velocity.y/2);
+            if (XAccelerate == false && YAccelerate == true)
+                rb.velocity = new Vector2(rb.velocity.x/4, 0+YAcclerateSpeed);
+            if (XAccelerate == true && YAccelerate == true)
+                rb.velocity = new Vector2(0+XAcclerateSpeed, YAcclerateSpeed);
             inputdirection = Vector2.zero;
         }
         
@@ -79,8 +91,14 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
-           
+           if(XAccelerate == false&&YAccelerate==false)
             rb.velocity = new Vector2(inputdirection.x * speed, rb.velocity.y);
+           if(XAccelerate==true&&YAccelerate==false)
+            rb.velocity = new Vector2(inputdirection.x * speed + XAcclerateSpeed, rb.velocity.y/2);
+           if (XAccelerate == false && YAccelerate == true)
+            rb.velocity = new Vector2(inputdirection.x * speed/4, 0+YAcclerateSpeed);
+           if (XAccelerate == true && YAccelerate == true)
+            rb.velocity = new Vector2(inputdirection.x * speed+XAcclerateSpeed, 0+YAcclerateSpeed);
             faceDir = transform.localScale.x;
             if (inputdirection.x > 0)
                 faceDir =PlayerSize;
@@ -107,6 +125,9 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
+        if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
+        AccelerateStopingmove();
+
     }
     private void DeleteCurrent(InputAction.CallbackContext context)
     {
@@ -196,5 +217,16 @@ public class PlayerController : MonoBehaviour
         isclimb=false;
         //isaddjump=false;只在墙壁时多段跳跃，但手感不好
     }
-
+    public void AccelerateStopingmove()
+    {
+        if (XAccelerate == false && YAccelerate == false)
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        if (XAccelerate == true && YAccelerate == false)
+            rb.velocity = new Vector2(0 + XAcclerateSpeed, rb.velocity.y / 2);
+        if (XAccelerate == false && YAccelerate == true)
+            rb.velocity = new Vector2(rb.velocity.x / 4, 0 + YAcclerateSpeed);
+        if (XAccelerate == true && YAccelerate == true)
+            rb.velocity = new Vector2(0 + XAcclerateSpeed, 0+YAcclerateSpeed);
+    }
+    
 }
