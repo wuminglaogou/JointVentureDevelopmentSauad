@@ -38,12 +38,23 @@ public class XAccelerate : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (X == true)
+        if (X == true||Y==true)
         { 
             if (other.gameObject.CompareTag("Player"))
             {
                 Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
                 PlayerController controller = other.gameObject.GetComponent<PlayerController>();
+                if (controller.inputdirection.x == 0)
+                {
+                    if (X == false && Y == false)
+                        rb.velocity = new Vector2(0, rb.velocity.y);
+                    if (X == true && Y == false)
+                        rb.velocity = new Vector2(0 + Xspeed, rb.velocity.y / 2);
+                    if (X == false && Y == true)
+                        rb.velocity = new Vector2(rb.velocity.x / 4, 0 + Yspeed);
+                    if (X == true && Y == true)
+                        rb.velocity = new Vector2(0 + Xspeed, 0 + Yspeed);
+                }
             }
         }
     }

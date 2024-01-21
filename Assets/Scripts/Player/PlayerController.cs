@@ -125,8 +125,8 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
-        if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
-        AccelerateStopingmove();
+        //if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
+        //AccelerateStopingmove();
 
     }
     private void DeleteCurrent(InputAction.CallbackContext context)
@@ -217,16 +217,16 @@ public class PlayerController : MonoBehaviour
         isclimb=false;
         //isaddjump=false;只在墙壁时多段跳跃，但手感不好
     }
-    public void AccelerateStopingmove()
-    {
-        if (XAccelerate == false && YAccelerate == false)
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        if (XAccelerate == true && YAccelerate == false)
-            rb.velocity = new Vector2(0 + XAcclerateSpeed, rb.velocity.y / 2);
-        if (XAccelerate == false && YAccelerate == true)
-            rb.velocity = new Vector2(rb.velocity.x / 4, 0 + YAcclerateSpeed);
-        if (XAccelerate == true && YAccelerate == true)
-            rb.velocity = new Vector2(0 + XAcclerateSpeed, 0+YAcclerateSpeed);
-    }
+    //public void AccelerateStopingmove()
+    //{
+    //    if (XAccelerate == false && YAccelerate == false)
+    //        rb.velocity = new Vector2(0, rb.velocity.y);
+    //    if (XAccelerate == true && YAccelerate == false)
+    //        rb.velocity = new Vector2(0 + XAcclerateSpeed, rb.velocity.y / 2);
+    //    if (XAccelerate == false && YAccelerate == true)
+    //        rb.velocity = new Vector2(rb.velocity.x / 4, 0 + YAcclerateSpeed);
+    //    if (XAccelerate == true && YAccelerate == true)
+    //        rb.velocity = new Vector2(0 + XAcclerateSpeed, 0+YAcclerateSpeed);
+    //}
     
 }
