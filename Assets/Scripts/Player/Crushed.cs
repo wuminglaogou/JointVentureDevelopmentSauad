@@ -21,7 +21,7 @@ public class Crushed : MonoBehaviour
         {
             Debug.Log("Õ½¶·£¬Ë¬£¡");
             Rigidbody2D rb=other.GetComponent<Rigidbody2D>();
-            if(rb.velocity.x==0&&rb.velocity.y==0)
+            if(rb.velocity.x==0&&rb.velocity.y>=-1)
             Destroy(other.gameObject);
         }
     }
