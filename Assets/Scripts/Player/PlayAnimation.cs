@@ -29,6 +29,12 @@ public class PlayAnimation : MonoBehaviour
     
     public void Die()
     {
+        Debug.Log("die");
         anim.SetBool("isdead", true);
+    }
+    public void Save()
+    {
+        Debug.Log("respawn");
+        anim.SetBool("isdead", false);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool YAccelerate = false;
     public float XAcclerateSpeed;
     public float YAcclerateSpeed;
-
+    public bool canSave;
     // Start is called before the first frame update
     [Header("基本参数")]
     public float speed, Fast = 0;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         inputcontrol.GamePlay.Split.performed += Split;
         inputcontrol.GamePlay.Switch.performed += Switch;
         inputcontrol.GamePlay.Delete.performed += DeleteCurrent;
+        inputcontrol.GamePlay.Save.performed += SavePos;
     }
 
     private void StopMoving(InputAction.CallbackContext context)
@@ -154,6 +156,14 @@ public class PlayerController : MonoBehaviour
         CharacterManager.Instance.Split(transform.position, mousePos);
         
     }
+    private void SavePos(InputAction.CallbackContext context)
+    {
+        if(canSave)
+        {
+            Debug.Log("sced");
+            SaveSystem.Instance.SavePos(transform.position);
+        }
+    }
     private void FixedUpdate()
     {
         //Move();
@@ -235,7 +245,6 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         CharacterManager.Instance.CharacterDie(this);
-        Destroy(gameObject);
     }
 
 }

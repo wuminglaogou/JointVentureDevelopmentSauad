@@ -10,6 +10,7 @@ public class GamePlayUIManager : Singleton<GamePlayUIManager>
 {
     public GameObject pauseUI;
     public GameObject volume;
+    public GameObject DieUI;
     [Header("×é¼þ")]
     public Slider masterVolume;
     public Slider musicVolume;
@@ -35,6 +36,14 @@ public class GamePlayUIManager : Singleton<GamePlayUIManager>
         sfxVolume.onValueChanged.RemoveAllListeners();
         settingButton.onClick.RemoveAllListeners();
         menuButton.onClick.RemoveAllListeners();
+    }
+    public void OpenDieUi()
+    {
+        DieUI.SetActive(true);
+    }
+    public void CloseDieUi()
+    {
+        DieUI.SetActive(false);
     }
     private void TogglePauseUI()
     {

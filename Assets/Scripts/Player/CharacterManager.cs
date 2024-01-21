@@ -65,25 +65,27 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
         {
             if(character==self)
             {
-                Debug.Log("entersuccess");
                 toRemove = character;
                 break;
             }                    
         }
         if (toRemove!=null)
         {
-            characters.Remove(toRemove);
+            if(characters.Count==1)
+            {
+                toRemove.gameObject.SetActive(false);
+                GamePlayUIManager.Instance.OpenDieUi();
+                //触发是否回到存档,UI以及禁用输入等等
+            }
+            else
+            {
+                characters.Remove(toRemove);
+                Destroy(self.gameObject);
+                activeCharacterIndex = 0;
+                characters[activeCharacterIndex].enabled = true;
+            }
         }
-        if (characters.Count == 0)
-        {
-            activeCharacterIndex = -1;
-            //触发存档
-        }
-        else
-        {
-            activeCharacterIndex = 0;
-            characters[activeCharacterIndex].enabled = true;
-        }
+
     }
     public void ActivateActivateCharacterWithIndex()
     {

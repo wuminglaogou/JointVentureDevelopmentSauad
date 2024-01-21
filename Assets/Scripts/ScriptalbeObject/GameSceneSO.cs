@@ -5,5 +5,6 @@ using UnityEngine.AddressableAssets;
 [CreateAssetMenu(menuName ="Game Scene/GameSceneSO")]
 public class GameSceneSO : ScriptableObject
 {
+    public bool isPassing=false;
     public AssetReference sceneReference;
 }

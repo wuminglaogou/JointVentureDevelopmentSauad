@@ -89,6 +89,15 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Save"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb1c5647-e174-4499-b645-503881e313b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -353,6 +362,17 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Delete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80598e44-37a2-441d-8405-49b0e67faf76"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Save"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -947,6 +967,7 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
         m_GamePlay_Split = m_GamePlay.FindAction("Split", throwIfNotFound: true);
         m_GamePlay_Switch = m_GamePlay.FindAction("Switch", throwIfNotFound: true);
         m_GamePlay_Delete = m_GamePlay.FindAction("Delete", throwIfNotFound: true);
+        m_GamePlay_Save = m_GamePlay.FindAction("Save", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1027,6 +1048,7 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Split;
     private readonly InputAction m_GamePlay_Switch;
     private readonly InputAction m_GamePlay_Delete;
+    private readonly InputAction m_GamePlay_Save;
     public struct GamePlayActions
     {
         private @Playerinputcontrol m_Wrapper;
@@ -1038,6 +1060,7 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
         public InputAction @Split => m_Wrapper.m_GamePlay_Split;
         public InputAction @Switch => m_Wrapper.m_GamePlay_Switch;
         public InputAction @Delete => m_Wrapper.m_GamePlay_Delete;
+        public InputAction @Save => m_Wrapper.m_GamePlay_Save;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1068,6 +1091,9 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
             @Delete.started += instance.OnDelete;
             @Delete.performed += instance.OnDelete;
             @Delete.canceled += instance.OnDelete;
+            @Save.started += instance.OnSave;
+            @Save.performed += instance.OnSave;
+            @Save.canceled += instance.OnSave;
         }
 
         private void UnregisterCallbacks(IGamePlayActions instance)
@@ -1093,6 +1119,9 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
             @Delete.started -= instance.OnDelete;
             @Delete.performed -= instance.OnDelete;
             @Delete.canceled -= instance.OnDelete;
+            @Save.started -= instance.OnSave;
+            @Save.performed -= instance.OnSave;
+            @Save.canceled -= instance.OnSave;
         }
 
         public void RemoveCallbacks(IGamePlayActions instance)
@@ -1282,6 +1311,7 @@ public partial class @Playerinputcontrol: IInputActionCollection2, IDisposable
         void OnSplit(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
         void OnDelete(InputAction.CallbackContext context);
+        void OnSave(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
