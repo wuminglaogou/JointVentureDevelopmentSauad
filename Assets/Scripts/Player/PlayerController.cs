@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("×´Ì¬")]
+    [Header("çŠ¶æ€")]
     public float faceDir;
     public float PlayerSize;
     public bool isaddjump = false;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float YAcclerateSpeed;
 
     // Start is called before the first frame update
-    [Header("»ù±¾²ÎÊı")]
+    [Header("åŸºæœ¬å‚æ•°")]
     public float speed, Fast = 0;
     public float MinSpeed;
     public float jumpForce;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool isHurt;
     public bool isdead;
     private int limit = 1;
-    [Header("ÒıÓÃ")]
+    [Header("å¼•ç”¨")]
     public Coroutine movingCoroutine;
     public AudioData jumpSFX;
     public GameObject Box;
@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
     private Playerinputcontrol inputcontrol;
     private Rigidbody2D rb;
     private Physicalcheck physicalcheck1;
-    [Header("ÎïÀí²ÄÖÊ")]
+    [Header("ç‰©ç†æè´¨")]
     public PhysicsMaterial2D wall;
     public PhysicsMaterial2D normal;
     public PhysicsMaterial2D isattack1;
 
     private void Awake()
     {
-        physicalcheck1 = GetComponent<Physicalcheck>();//»ñµÃÎÄ¼şÄÚµÄ¹«¿ª±äÁ¿
+        physicalcheck1 = GetComponent<Physicalcheck>();//è·å¾—æ–‡ä»¶å†…çš„å…¬å¼€å˜é‡
         rb = GetComponent<Rigidbody2D>();
         inputcontrol = new Playerinputcontrol();
         inputcontrol.GamePlay.Move.performed += Moving;
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
                 limit = 1;
 
             }
-            if(isaddjump==true)//ÉÏÇ½ºóµ½ÂäµØÈÎÒâÊ±¼äµã¶¼¶îÍâ¶¼Ò»¶ÎÌøÔ¾
+            if(isaddjump==true)//ä¸Šå¢™ååˆ°è½åœ°ä»»æ„æ—¶é—´ç‚¹éƒ½é¢å¤–éƒ½ä¸€æ®µè·³è·ƒ
             {
                 rb.gravityScale = 0;
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
     public void CancelClimb()
     {
         isclimb=false;
-        //isaddjump=false;Ö»ÔÚÇ½±ÚÊ±¶à¶ÎÌøÔ¾£¬µ«ÊÖ¸Ğ²»ºÃ
+        //isaddjump=false;åªåœ¨å¢™å£æ—¶å¤šæ®µè·³è·ƒï¼Œä½†æ‰‹æ„Ÿä¸å¥½
     }
     //public void AccelerateStopingmove()
     //{
@@ -228,5 +228,13 @@ public class PlayerController : MonoBehaviour
     //    if (XAccelerate == true && YAccelerate == true)
     //        rb.velocity = new Vector2(0 + XAcclerateSpeed, 0+YAcclerateSpeed);
     //}
-    
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+    public void SwitchWhenDie()
+    {
+        CharacterManager.Instance.SwitchToNextCharacter();
+    }
 }

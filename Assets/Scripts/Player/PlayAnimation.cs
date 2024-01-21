@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,5 +25,10 @@ public class PlayAnimation : MonoBehaviour
         anim.SetBool("isground", physicalcheck.isGround);
         anim.SetBool("isclimb", playerController.isclimb);
         anim.SetBool("issplit",playerController.issplit);
+    }
+    
+    public void Die()
+    {
+        anim.SetBool("isdead", true);
     }
 }
