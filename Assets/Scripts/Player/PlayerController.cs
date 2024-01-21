@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D wall;
     public PhysicsMaterial2D normal;
     public PhysicsMaterial2D isattack1;
+    //[Header("事件")]
+    //public UnityAction onDieEvent = delegate { };
 
     private void Awake()
     {
@@ -134,7 +137,7 @@ public class PlayerController : MonoBehaviour
         CharacterManager.Instance.DeleteCurrentCharacter();
     }
 
-    private void Switch(InputAction.CallbackContext context)
+    public void Switch(InputAction.CallbackContext context)
     {
         if (CharacterManager.Instance.characters.Count==1)
         {
@@ -231,10 +234,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        CharacterManager.Instance.CharacterDie(this);
         Destroy(gameObject);
     }
-    public void SwitchWhenDie()
-    {
-        CharacterManager.Instance.SwitchToNextCharacter();
-    }
+
 }

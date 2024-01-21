@@ -625,7 +625,11 @@ MonoBehaviour:
   inputdirection: {x: 0, y: 0}
   isclimb: 0
   issplit: 0
-  speed: 8
+  XAccelerate: 0
+  YAccelerate: 0
+  XAcclerateSpeed: 0
+  YAcclerateSpeed: 0
+  speed: 4
   Fast: 0
   MinSpeed: 8
   jumpForce: 10

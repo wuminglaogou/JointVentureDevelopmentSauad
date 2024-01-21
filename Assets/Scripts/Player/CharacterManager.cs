@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : Singleton<CharacterManager>
+public class CharacterManager : PersistentSingleton<CharacterManager>
 {
     public GameObject characterPrefab;
     public List<PlayerController> characters;
@@ -57,6 +57,33 @@ public class CharacterManager : Singleton<CharacterManager>
         characters.RemoveAt(activeCharacterIndex);
         activeCharacterIndex = 0;
         characters[activeCharacterIndex].enabled = true;
+    }
+    public void CharacterDie(PlayerController self)
+    {
+        PlayerController toRemove = null;
+        foreach (var character in characters)
+        {
+            if(character==self)
+            {
+                Debug.Log("entersuccess");
+                toRemove = character;
+                break;
+            }                    
+        }
+        if (toRemove!=null)
+        {
+            characters.Remove(toRemove);
+        }
+        if (characters.Count == 0)
+        {
+            activeCharacterIndex = -1;
+            //´¥·¢´æµµ
+        }
+        else
+        {
+            activeCharacterIndex = 0;
+            characters[activeCharacterIndex].enabled = true;
+        }
     }
     public void ActivateActivateCharacterWithIndex()
     {

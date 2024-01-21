@@ -1755,53 +1755,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1098844833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1098844835}
-  - component: {fileID: 1098844834}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1098844834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098844833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a60191175b4c1ee4cad9fb670b14e274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllDead:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &1098844835
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098844833}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5216914, y: 0.13598108, z: -0.04831584}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178037592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,7 +4377,7 @@ PrefabInstance:
     - target: {fileID: 5290563234151478744, guid: 614531119562dc3428092bd4a126cf79, type: 3}
       propertyPath: characterPrefab
       value: 
-      objectReference: {fileID: 2254019074062311872}
+      objectReference: {fileID: 7527537071497013773, guid: 883df1ae3e64ed8419c27dad3f668f03, type: 3}
     - target: {fileID: 5290563234151478744, guid: 614531119562dc3428092bd4a126cf79, type: 3}
       propertyPath: characters.Array.data[0]
       value: 
@@ -4668,6 +4621,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3230638794524352244, guid: 3a6c1a3287ccbaf4aa92c964603495e3, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.3609265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230638794524352244, guid: 3a6c1a3287ccbaf4aa92c964603495e3, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 8.744511
+      objectReference: {fileID: 0}
     - target: {fileID: 3402637203366376384, guid: 3a6c1a3287ccbaf4aa92c964603495e3, type: 3}
       propertyPath: m_Size.x
       value: 1.3609265
@@ -4865,4 +4826,3 @@ SceneRoots:
   - {fileID: 2207441257584714934}
   - {fileID: 1438383499}
   - {fileID: 2095059670}
-  - {fileID: 1098844835}
