@@ -25,6 +25,7 @@ public class PlayAnimation : MonoBehaviour
         anim.SetBool("isground", physicalcheck.isGround);
         anim.SetBool("isclimb", playerController.isclimb);
         anim.SetBool("issplit",playerController.issplit);
+        anim.SetBool("disguiseing", playerController.disguiseing);
     }
     
     public void Die()
@@ -37,4 +38,5 @@ public class PlayAnimation : MonoBehaviour
         Debug.Log("respawn");
         anim.SetBool("isdead", false);
     }
+   
 }

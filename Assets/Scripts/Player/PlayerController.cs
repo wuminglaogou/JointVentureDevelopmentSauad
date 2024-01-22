@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public float XAcclerateSpeed;
     public float YAcclerateSpeed;
     public bool canSave;
+    public bool disguiseing = false;
     // Start is called before the first frame update
     [Header("基本参数")]
     public float speed, Fast = 0;
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
+      
         //if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
         //AccelerateStopingmove();
 
@@ -210,6 +212,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+          
+            disguiseing=!disguiseing;
             gameObject.SetActive(isActive);
             rb.velocity = new Vector2(0, 0);
             if (isActive)
