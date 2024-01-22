@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SavePoint : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class SavePoint : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<PlayerController>().canSave = true;
-            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

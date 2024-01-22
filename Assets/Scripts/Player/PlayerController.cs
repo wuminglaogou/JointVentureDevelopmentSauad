@@ -44,8 +44,9 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D wall;
     public PhysicsMaterial2D normal;
     public PhysicsMaterial2D isattack1;
-    //[Header("事件")]
+    [Header("事件")]
     //public UnityAction onDieEvent = delegate { };
+    public UnityEvent OnSaving;
 
     private void Awake()
     {
@@ -131,7 +132,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
-      
+
         //if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
         //AccelerateStopingmove();
 
@@ -164,6 +165,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("sced");
             SaveSystem.Instance.SavePos(transform.position);
+            OnSaving?.Invoke();
         }
     }
     private void FixedUpdate()
@@ -250,5 +252,13 @@ public class PlayerController : MonoBehaviour
     {
         CharacterManager.Instance.CharacterDie(this);
     }
-
+    public void Save()
+    {
+        gameObject.SetActive(false);
+        Invoke("OutSaving", 1f);
+    }
+    public void OutSaving()
+    {
+        gameObject.SetActive(true);
+    }
 }
