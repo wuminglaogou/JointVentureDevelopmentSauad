@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7faad4090af89f2488f7c263f6f66c90
+guid: 485f274813d47fa41b39552e56af5bdf
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -600,15 +600,15 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   - name: tilemap_24
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 4.219317, y: 0.58326596}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 95
-      y: 203
-      width: 24
-      height: 12
+      x: 186
+      y: 219
+      width: 1
+      height: 2
     spriteID: 4e7fde17ab25ce44883477a5d0db60bb
     spriteBone: []
     spriteOutline: []
@@ -617,7 +617,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 95, y: 203}
+    uvTransform: {x: 186, y: 219}
     spritePosition: {x: 0, y: 0}
   - name: tilemap_25
     originalName: 
@@ -626,10 +626,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 15
-      y: 235
-      width: 24
-      height: 12
+      x: 187
+      y: 193
+      width: 6
+      height: 1
     spriteID: 0458962d5429b3347af7b4ae9805cfeb
     spriteBone: []
     spriteOutline: []
@@ -638,7 +638,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 15, y: 235}
+    uvTransform: {x: 187, y: 193}
     spritePosition: {x: 0, y: 0}
   - name: tilemap_26
     originalName: 
@@ -647,10 +647,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 198
-      width: 24
-      height: 12
+      x: 205
+      y: 237
+      width: 1
+      height: 4
     spriteID: 86bc0a8580732984881699fa8cd9cd1c
     spriteBone: []
     spriteOutline: []
@@ -659,7 +659,28 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 198}
+    uvTransform: {x: 205, y: 237}
+    spritePosition: {x: 0, y: 0}
+  - name: tilemap_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 15
+      y: 38
+      width: 24
+      height: 24
+    spriteID: 16217ad00c1e29942bc541b5e1fb7e67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 15, y: 38}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
