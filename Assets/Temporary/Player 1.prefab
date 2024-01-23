@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed89d50ffb84ee240a14c95ee86d422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOffset: {x: -0.07, y: -0.02}
-  checkRaduis: 0.22
+  bottomOffset: {x: -0.07, y: -0.18}
+  checkRaduis: 0.14
   isGround: 0
   leftOffset: {x: -0.63, y: 0.36}
   rightOffset: {x: 0.58, y: 0.42}
@@ -646,6 +646,33 @@ MonoBehaviour:
   wall: {fileID: 0}
   normal: {fileID: 0}
   isattack1: {fileID: 0}
+  OnSaving:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SaveAnim, Assembly-CSharp
+        m_MethodName: BeginToSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1116763503095398059}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &3429461163984940791
 Animator:
   serializedVersion: 5
