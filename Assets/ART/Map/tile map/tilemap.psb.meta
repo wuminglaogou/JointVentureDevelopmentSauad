@@ -228,7 +228,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 15
-      y: 136
+      y: 137
       width: 24
       height: 24
     spriteID: 3f42af200cd086e488904aefc3ece805
@@ -239,7 +239,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 15, y: 136}
+    uvTransform: {x: 15, y: 137}
     spritePosition: {x: 0, y: 0}
   - name: tilemap_7
     originalName: 
