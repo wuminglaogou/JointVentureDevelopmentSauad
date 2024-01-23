@@ -194,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.39789033, y: -0.026863277}
+  m_Offset: {x: 0.21844071, y: 0.014447331}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -205,7 +205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.034132242, y: 0.78234637}
+  m_Size: {x: 0.0001, y: 0.69972515}
   m_EdgeRadius: 0
 --- !u!61 &3345560086245064837
 BoxCollider2D:
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47367078, y: -0.03730245}
+  m_Offset: {x: -0.46578524, y: 0.0040080845}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -250,7 +250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.045813084, y: 0.7665206}
+  m_Size: {x: 0.030041993, y: 0.6838996}
   m_EdgeRadius: 0
 --- !u!61 &2958397873333198892
 BoxCollider2D:
@@ -284,7 +284,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05511172, y: 0.36720818}
+  m_Offset: {x: -0.12749311, y: 0.37708056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90904033, y: 0.0323447}
+  m_Size: {x: 0.68542224, y: 0.05218944}
   m_EdgeRadius: 0
 --- !u!61 &5255617996509023688
 BoxCollider2D:
@@ -329,7 +329,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03898889, y: -0.43868506}
+  m_Offset: {x: -0.13804483, y: -0.29017508}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -340,7 +340,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9018866, y: 0.0013304651}
+  m_Size: {x: 0.7037747, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!61 &3926708435078591719
 BoxCollider2D:
@@ -374,7 +374,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.57285523}
+  m_Offset: {x: -0.13431811, y: -0.27854297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -385,7 +385,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 0.059535503}
+  m_Size: {x: 0.57033634, y: 0.061902538}
   m_EdgeRadius: 0
 --- !u!114 &6060866563846552833
 MonoBehaviour:
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095332688631889860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75c0e129d51ea40459050d0f11d94af2, type: 3}
   m_Name: 
@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed89d50ffb84ee240a14c95ee86d422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOffset: {x: -0.07, y: -0.18}
-  checkRaduis: 0.14
+  bottomOffset: {x: -0.07, y: -0.02}
+  checkRaduis: 0.22
   isGround: 0
   leftOffset: {x: -0.63, y: 0.36}
   rightOffset: {x: 0.58, y: 0.42}
@@ -648,31 +648,7 @@ MonoBehaviour:
   isattack1: {fileID: 0}
   OnSaving:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SaveAnim, Assembly-CSharp
-        m_MethodName: BeginToSave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1116763503095398059}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &3429461163984940791
 Animator:
   serializedVersion: 5
