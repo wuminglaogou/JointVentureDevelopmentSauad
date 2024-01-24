@@ -99,8 +99,19 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
             {
                 characters.Remove(toRemove);
                 Destroy(self.gameObject);
-                activeCharacterIndex = 0;
-                characters[activeCharacterIndex].enabled = true;
+                bool isActive = false;
+                foreach (var character in characters)
+                {
+                    if(character.enabled==true)
+                    {
+                        isActive = true;
+                    }
+                }
+                if(isActive==false)
+                {
+                    activeCharacterIndex = 0;
+                    characters[activeCharacterIndex].enabled = true;
+                }          
             }
         }
 
