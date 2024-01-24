@@ -1188,7 +1188,7 @@ MonoBehaviour:
   clickSound:
     volume: 0.5
     clip: {fileID: 8300000, guid: 44638ba0807598b4388e5c7b30407815, type: 3}
-  gameScene: {fileID: 11400000, guid: 3a636dac57b4b914a9c94583f31e5559, type: 2}
+  gameScene: {fileID: 11400000, guid: 337c7359c0b63b548a32659f043f3e0e, type: 2}
   startGameButton: {fileID: 5338588818365320380}
   quitGameButton: {fileID: 3639580771976931641}
   instructionButton: {fileID: 3122957293151625602}
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e35e4275aa3064749abb0126b037d10c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc41ff3de788f4149a811af688338480, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
