@@ -16,8 +16,6 @@ GameObject:
   - component: {fileID: 3345560086245064837}
   - component: {fileID: 2958397873333198892}
   - component: {fileID: 5255617996509023688}
-  - component: {fileID: 3926708435078591719}
-  - component: {fileID: 6060866563846552833}
   m_Layer: 3
   m_Name: disguise
   m_TagString: disguise
@@ -194,7 +192,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.21844071, y: 0.032371625}
+  m_Offset: {x: 0.22076754, y: 0.04438351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -205,7 +203,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.66387653}
+  m_Size: {x: 0.002893895, y: 0.63985276}
   m_EdgeRadius: 0
 --- !u!61 &3345560086245064837
 BoxCollider2D:
@@ -239,7 +237,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.45443594, y: 0.021932393}
+  m_Offset: {x: -0.5059773, y: 0.033192635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -250,7 +248,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0073434114, y: 0.64805096}
+  m_Size: {x: 0.034066737, y: 0.6255305}
   m_EdgeRadius: 0
 --- !u!61 &2958397873333198892
 BoxCollider2D:
@@ -284,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11898078, y: 0.37708056}
+  m_Offset: {x: -0.13853386, y: 0.37032056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -295,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66839755, y: 0.05218947}
+  m_Size: {x: 0.70750374, y: 0.02942419}
   m_EdgeRadius: 0
 --- !u!61 &5255617996509023688
 BoxCollider2D:
@@ -329,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11818348, y: -0.29017508}
+  m_Offset: {x: -0.13081235, y: -0.27729565}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -340,65 +338,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.664052, y: 0.000100016594}
+  m_Size: {x: 0.6387943, y: 0.047744185}
   m_EdgeRadius: 0
---- !u!61 &3926708435078591719
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095332688631889860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13431811, y: -0.27854297}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.57033634, y: 0.061902538}
-  m_EdgeRadius: 0
---- !u!114 &6060866563846552833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095332688631889860}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c0e129d51ea40459050d0f11d94af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3066436825235016840
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +375,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.25, y: -3.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 541071505824845290}
@@ -478,8 +419,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1771937099
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1326057987, guid: b917d0e63cf9bbf4e84f724c0d0a93eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -507,7 +448,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.5
+  m_GravityScale: 0.5
   m_Material: {fileID: 6200000, guid: 8d59807a9ba133b4f9f38fafbe60dce0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -551,8 +492,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059165347, y: 0.3566809}
-  m_Size: {x: 0.9887942, y: 0.6712045}
+  m_Offset: {x: -0.0029776252, y: 0.3724262}
+  m_Size: {x: 0.86451113, y: 0.63971406}
   m_Direction: 1
 --- !u!114 &4350066345277464287
 MonoBehaviour:
@@ -566,8 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed89d50ffb84ee240a14c95ee86d422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOffset: {x: -0.07, y: -0.02}
-  checkRaduis: 0.22
+  bottomOffset: {x: -0.07, y: -0.18}
+  checkRaduis: 0.14
   isGround: 0
   leftOffset: {x: -0.63, y: 0.36}
   rightOffset: {x: 0.58, y: 0.42}
@@ -594,22 +535,13 @@ MonoBehaviour:
   disableTime: 0.3
   disableTeleporter: 0
   findDistance: 3
-  OnFindingDoor:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
-        m_MethodName: Appear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  door: {fileID: 0}
+  doors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1116763503095398059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDir: 0
-  PlayerSize: 1
+  PlayerSize: 2
   isaddjump: 0
   jumppressed: 0
   inputdirection: {x: 0, y: 0}
@@ -635,10 +567,10 @@ MonoBehaviour:
   YAcclerateSpeed: 0
   canSave: 0
   disguiseing: 0
-  speed: 4
+  speed: 9.5
   Fast: 0
-  MinSpeed: 8
-  jumpForce: 10
+  MinSpeed: 9.5
+  jumpForce: 15
   hurtforce: 0
   isHurt: 0
   isdead: 0
@@ -666,7 +598,31 @@ MonoBehaviour:
   isattack1: {fileID: 0}
   OnSaving:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1116763503095398059}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1918080905483690249, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
+        m_TargetAssemblyTypeName: SaveAnim, Assembly-CSharp
+        m_MethodName: BeginToSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &3429461163984940791
 Animator:
   serializedVersion: 5
