@@ -11,6 +11,22 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
     public float buffetTime = 0.5f;
     public float vectorForce = 10f;
     public Vector2 speed;
+    public void ClearToOnePlayer()
+    {
+        if(characters.Count > 0)
+        {
+            for (int i = 0; i < characters.Count; i++)
+            {
+                if (i != 0)
+                {
+                    Destroy(characters[i].gameObject);
+                }
+            }
+            characters[0].enabled = true;
+        }
+        
+        
+    }
     public void Split(Vector3 postion,Vector2 dir)
     {
         if(characters.Count==3)
