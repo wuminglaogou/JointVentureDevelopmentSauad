@@ -7,10 +7,19 @@ public class AudioManager : PersistentSingleton<AudioManager>
 {
     public const float Min_Pitch = 0.9f;
     public const float Max_Pitch = 1.1f;
+    public AudioSource movingPlayer;
     public AudioSource sfxPlayer;
     public AudioSource musicPlayer;
     public AudioMixer mixer;
     //∑≈“Ù∆µ
+    public void PlayMovingAudio()
+    {
+        movingPlayer.Play();
+    }
+    public void StopMovingAudio()
+    {
+        movingPlayer.Stop();
+    }
     public void ChangeMainVolume(float amount)
     {
         mixer.SetFloat("MasterVolume", amount * 100 - 80);

@@ -588,6 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ef3b021c4897546b06cd7533456ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 2ea74e085f7489744b676b71c0f8e90c, type: 3}
   disableTime: 0.3
   disableTeleporter: 0
   findDistance: 3
@@ -640,8 +643,23 @@ MonoBehaviour:
   isHurt: 0
   isdead: 0
   jumpSFX:
-    volume: 0.5
+    volume: 0.4
     clip: {fileID: 8300000, guid: 98fbc6d441621c04a8c4a64618ecaaba, type: 3}
+  dieSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 644d57f55c53ce74091ce8ccb74e83cf, type: 3}
+  splitSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: b438a5b405eaf134d9db508a8cb8b189, type: 3}
+  transformSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 2ea74e085f7489744b676b71c0f8e90c, type: 3}
+  moveSFX:
+    volume: 0.3
+    clip: {fileID: 8300000, guid: fcf929952bd5f81468413cfc4040c3ed, type: 3}
+  henshinSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 812d42de1470dde459f99e6f71e06960, type: 3}
   Box: {fileID: 2095332688631889860}
   wall: {fileID: 0}
   normal: {fileID: 0}
