@@ -87,9 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
-  OnAppearing:
-    m_PersistentCalls:
-      m_Calls: []
+  anotherDoor: {fileID: 0}
 --- !u!1 &2513471661954868137
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,9 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
-  OnAppearing:
-    m_PersistentCalls:
-      m_Calls: []
+  anotherDoor: {fileID: 0}
 --- !u!1 &3875648350704433686
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,9 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
-  OnAppearing:
-    m_PersistentCalls:
-      m_Calls: []
+  anotherDoor: {fileID: 0}
 --- !u!1 &8711746490367129079
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,9 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
-  OnAppearing:
-    m_PersistentCalls:
-      m_Calls: []
+  anotherDoor: {fileID: 0}
 --- !u!1 &9112282853222229255
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +445,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9bf21c5681cf33449742592e253afcc, type: 3}
   m_Color: {r: 0.12941173, g: 0.9254902, b: 0.1673013, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -512,6 +504,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
-  OnAppearing:
-    m_PersistentCalls:
-      m_Calls: []
+  anotherDoor: {fileID: 0}
