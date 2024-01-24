@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class GamePlayUIManager : Singleton<GamePlayUIManager>
 {
+    public AudioData clickSound;
+    public AudioData respawnSound;
     public GameObject pauseUI;
     public GameObject volume;
     public GameObject DieUI;
@@ -43,6 +45,7 @@ public class GamePlayUIManager : Singleton<GamePlayUIManager>
     }
     public void CloseDieUi()
     {
+        AudioManager.Instance.PlayAudio(clickSound);
         DieUI.SetActive(false);
     }
     private void TogglePauseUI()
@@ -58,9 +61,11 @@ public class GamePlayUIManager : Singleton<GamePlayUIManager>
             AudioManager.Instance.ChangeSliderVolume();
             Time.timeScale = 0;
         }
+        AudioManager.Instance.PlayAudio(clickSound);
     }
     private void BackToMenu()
     {
+        AudioManager.Instance.PlayAudio(clickSound);
         SceneLoader.Instance.LoadMenuScene();
     }
     private void OnMasterValueChanged(float value)

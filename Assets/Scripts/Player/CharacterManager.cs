@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterManager : PersistentSingleton<CharacterManager>
 {
+    public AudioData splitSFX;
     public GameObject characterPrefab;
     public List<PlayerController> characters;
     public int activeCharacterIndex = 0;
@@ -16,6 +17,7 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
         {
             return;
         }
+        AudioManager.Instance.PlayAudio(splitSFX);
         characters[activeCharacterIndex].enabled = false;
         // 创建新角色实例
         Vector3 newPos=new Vector3(postion.x,postion.y+1,postion.z);

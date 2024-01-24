@@ -5,10 +5,11 @@ using UnityEngine;
 public class SaveSystem : PersistentSingleton<SaveSystem>
 {
     public Data data=new Data();
+    public AudioData saveSound;
     public void SavePos(Vector3 pos)
     {
         Debug.Log(pos.x + " " + pos.y + " " + pos.z);
-        
+        AudioManager.Instance.PlayAudio(saveSound);
         data.vector3Data = new SerializeVector3(pos);
     }
     public void LoadPos()

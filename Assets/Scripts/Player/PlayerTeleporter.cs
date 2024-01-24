@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class PlayerTeleporter : MonoBehaviour
 {
+    public AudioData teleportSFX;
     private GameObject currentTeleporter;
     public float disableTime;//可设置传送之后的无法传送时间
     private float disableCounter;
@@ -31,6 +32,7 @@ public class PlayerTeleporter : MonoBehaviour
             currentTeleporter = collision.gameObject;//获得当前传送点目标
             if (!disableTeleporter)
             {
+                AudioManager.Instance.PlayAudio(teleportSFX);
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
                 HeleporterAble();
             }

@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
     [Header("引用")]
     public Coroutine movingCoroutine;
     public AudioData jumpSFX;
+    public AudioData dieSFX;
+    public AudioData splitSFX;
+    public AudioData transformSFX;
+    public AudioData moveSFX;
+    public AudioData henshinSFX;
     public GameObject Box;
     private Boolean isActive = true;
     private Playerinputcontrol inputcontrol;
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour
         physicalcheck1 = GetComponent<Physicalcheck>();//获得文件内的公开变量
         rb = GetComponent<Rigidbody2D>();
         inputcontrol = new Playerinputcontrol();
+        inputcontrol.GamePlay.Move.started += StartMoving;
         inputcontrol.GamePlay.Move.performed += Moving;
         inputcontrol.GamePlay.Move.canceled += StopMoving;
         inputcontrol.GamePlay.Jump.performed += Jump;
@@ -62,11 +68,21 @@ public class PlayerController : MonoBehaviour
         inputcontrol.GamePlay.Save.performed += SavePos;
     }
 
+    private void StartMoving(InputAction.CallbackContext context)
+    {
+        if (physicalcheck1.isGround)
+        {
+            AudioManager.Instance.PlayMovingAudio();
+        }
+        
+    }
+
     private void StopMoving(InputAction.CallbackContext context)
     {
-
+        AudioManager.Instance.StopMovingAudio();
         if (isActive)
         {
+
             if (movingCoroutine != null)
             {
                 StopCoroutine(movingCoroutine);
@@ -214,7 +230,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-          
+            AudioManager.Instance.PlayAudio(henshinSFX);
             disguiseing=!disguiseing;
             gameObject.SetActive(isActive);
             rb.velocity = new Vector2(0, 0);
@@ -250,6 +266,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.PlayAudio(dieSFX);
         CharacterManager.Instance.CharacterDie(this);
     }
     public void Save()
