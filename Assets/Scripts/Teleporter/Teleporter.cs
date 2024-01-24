@@ -8,7 +8,7 @@ public class Teleporter : MonoBehaviour
 {
     [SerializeField] private Transform destination;
     private Boolean isActive=true;
-    public UnityEvent OnAppearing;
+    public GameObject anotherDoor;
     public Transform GetDestination()//用于获取目标传送点位置
     {
         return destination;
@@ -17,9 +17,8 @@ public class Teleporter : MonoBehaviour
     {
         gameObject.SetActive(isActive);
         isActive = !isActive;
-        OnAppearing?.Invoke();
     }
-    public void TurnOnAnother(GameObject gameObject)
+    public void TurnOnAnother(GameObject anotherDoor)
     {
         gameObject.SetActive(!isActive);
     }
