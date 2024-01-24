@@ -11,9 +11,6 @@ public class CameraChanger : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         camera0.SetActive(false);
-        camera0.tag = "Untagged";
-        camera1.tag = "MainCamera";
-        CharacterManager.Instance.ClearToOnePlayer();
         camera1.SetActive(true);
     }
     public void OnTriggerExit2D(Collider2D collision)
