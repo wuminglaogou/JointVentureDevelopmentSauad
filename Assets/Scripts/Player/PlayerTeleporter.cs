@@ -6,17 +6,17 @@ using UnityEngine.Events;
 
 public class PlayerTeleporter : MonoBehaviour
 {
+    public AudioData teleportSFX;
     private GameObject currentTeleporter;
     public float disableTime;//可设置传送之后的无法传送时间
     private float disableCounter;
     public bool disableTeleporter;//表示能否传送
     public float findDistance;
-    public UnityEvent OnFindingDoor;
-    public GameObject door;
+    public GameObject[] doors=new GameObject[6];
 
     void Update()
     {
-        FindDoor(door);
+        FindDoor(doors);
         if (disableTeleporter)
         {
             disableCounter -= Time.deltaTime;
@@ -31,6 +31,7 @@ public class PlayerTeleporter : MonoBehaviour
             currentTeleporter = collision.gameObject;//获得当前传送点目标
             if (!disableTeleporter)
             {
+                AudioManager.Instance.PlayAudio(teleportSFX);
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
                 HeleporterAble();
             }
@@ -57,13 +58,17 @@ public class PlayerTeleporter : MonoBehaviour
         }
     }
 
-    public void FindDoor(GameObject gameObject)
+    public void FindDoor(params GameObject[] gameObject)
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(gameObject.tag=="TeleporterDoor"&&Vector2.Distance(gameObject.transform.position,transform.position)<=findDistance)
+            for (int i = 0;i<6; i++)
             {
-                OnFindingDoor?.Invoke();
+                if (gameObject[i].tag == "TeleporterDoor" && Vector2.Distance(gameObject[i].transform.position, transform.position) <= findDistance)
+                {
+                    gameObject[i].GetComponent<Teleporter>().Appear();
+                    gameObject[i].GetComponent<Teleporter>().TurnOnAnother(gameObject[i].GetComponent<Teleporter>().anotherDoor);
+                }
             }
         }
     }

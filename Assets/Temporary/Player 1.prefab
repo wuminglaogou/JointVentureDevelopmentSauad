@@ -194,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.39789033, y: -0.026863277}
+  m_Offset: {x: 0.21844071, y: 0.032371625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -205,7 +205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.034132242, y: 0.78234637}
+  m_Size: {x: 0.0001, y: 0.66387653}
   m_EdgeRadius: 0
 --- !u!61 &3345560086245064837
 BoxCollider2D:
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47367078, y: -0.03730245}
+  m_Offset: {x: -0.45443594, y: 0.021932393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -250,7 +250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.045813084, y: 0.7665206}
+  m_Size: {x: 0.0073434114, y: 0.64805096}
   m_EdgeRadius: 0
 --- !u!61 &2958397873333198892
 BoxCollider2D:
@@ -284,7 +284,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05511172, y: 0.36720818}
+  m_Offset: {x: -0.11898078, y: 0.37708056}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90904033, y: 0.0323447}
+  m_Size: {x: 0.66839755, y: 0.05218947}
   m_EdgeRadius: 0
 --- !u!61 &5255617996509023688
 BoxCollider2D:
@@ -329,7 +329,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03898889, y: -0.43868506}
+  m_Offset: {x: -0.11818348, y: -0.29017508}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -340,7 +340,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9018866, y: 0.0013304651}
+  m_Size: {x: 0.664052, y: 0.000100016594}
   m_EdgeRadius: 0
 --- !u!61 &3926708435078591719
 BoxCollider2D:
@@ -374,7 +374,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.57285523}
+  m_Offset: {x: -0.13431811, y: -0.27854297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -385,7 +385,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 0.059535503}
+  m_Size: {x: 0.57033634, y: 0.061902538}
   m_EdgeRadius: 0
 --- !u!114 &6060866563846552833
 MonoBehaviour:
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095332688631889860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75c0e129d51ea40459050d0f11d94af2, type: 3}
   m_Name: 
@@ -588,6 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ef3b021c4897546b06cd7533456ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 2ea74e085f7489744b676b71c0f8e90c, type: 3}
   disableTime: 0.3
   disableTeleporter: 0
   findDistance: 3
@@ -640,12 +643,30 @@ MonoBehaviour:
   isHurt: 0
   isdead: 0
   jumpSFX:
-    volume: 0.5
+    volume: 0.4
     clip: {fileID: 8300000, guid: 98fbc6d441621c04a8c4a64618ecaaba, type: 3}
+  dieSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 644d57f55c53ce74091ce8ccb74e83cf, type: 3}
+  splitSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: b438a5b405eaf134d9db508a8cb8b189, type: 3}
+  transformSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 2ea74e085f7489744b676b71c0f8e90c, type: 3}
+  moveSFX:
+    volume: 0.3
+    clip: {fileID: 8300000, guid: fcf929952bd5f81468413cfc4040c3ed, type: 3}
+  henshinSFX:
+    volume: 0.5
+    clip: {fileID: 8300000, guid: 812d42de1470dde459f99e6f71e06960, type: 3}
   Box: {fileID: 2095332688631889860}
   wall: {fileID: 0}
   normal: {fileID: 0}
   isattack1: {fileID: 0}
+  OnSaving:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &3429461163984940791
 Animator:
   serializedVersion: 5

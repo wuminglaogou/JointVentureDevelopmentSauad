@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d234ebc3f942ac64b843abd0b7647b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 0}
+  splitSFX:
+    volume: 1
+    clip: {fileID: 8300000, guid: b438a5b405eaf134d9db508a8cb8b189, type: 3}
+  characterPrefab: {fileID: 3066436825235016840, guid: 61d6da238feebee4082045a9ed78763e, type: 3}
   characters:
   - {fileID: 0}
   activeCharacterIndex: 0
