@@ -10,13 +10,13 @@ public class ClimbWall : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("jump");
+        
         if (other.gameObject.CompareTag("Player"))
             other.GetComponent<PlayerController>().AddJump();
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("jump");
+        
         if (other.gameObject.CompareTag("Player"))
             other.GetComponent<PlayerController>().CancelClimb();
     }
