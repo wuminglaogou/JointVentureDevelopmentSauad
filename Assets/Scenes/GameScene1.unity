@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 190691108}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &59410819
 BoxCollider2D:
@@ -887,6 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 59410817}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &190691110
 BoxCollider2D:
@@ -1052,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1527976601}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &201479926
 BoxCollider2D:
@@ -4064,6 +4067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1298847224}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &630320182
 BoxCollider2D:
@@ -24527,6 +24531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 2058880841}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &947323957
 BoxCollider2D:
@@ -25614,6 +25619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 2035116402}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &1032937129
 BoxCollider2D:
@@ -43782,6 +43788,10 @@ PrefabInstance:
       value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4953155235396904783, guid: 3d9bd3dce69f2ad46a61a0bb0b96e67c, type: 3}
+      propertyPath: isSpecial
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953155235396904783, guid: 3d9bd3dce69f2ad46a61a0bb0b96e67c, type: 3}
       propertyPath: anotherDoor
       value: 
       objectReference: {fileID: 1694540822}
@@ -43968,7 +43978,7 @@ PrefabInstance:
     - target: {fileID: 8490359719150800867, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1357967460}
+      objectReference: {fileID: 1792425837}
     - target: {fileID: 8490359719150800867, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: anim
       value: 
@@ -44363,6 +44373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1730104476}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &1197866699
 BoxCollider2D:
@@ -45268,6 +45279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 630320180}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &1298847226
 BoxCollider2D:
@@ -48056,6 +48068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 201479924}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &1527976603
 BoxCollider2D:
@@ -48618,7 +48631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera0: {fileID: 1357967458}
   camera1: {fileID: 1792425835}
-  camerachanger0: {fileID: 1721001759}
+  camerachanger0: {fileID: 0}
   camerachanger1: {fileID: 0}
 --- !u!4 &1721001762
 Transform:
@@ -48681,6 +48694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1197866697}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &1730104478
 BoxCollider2D:
@@ -60282,6 +60296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1032937127}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &2035116404
 BoxCollider2D:
@@ -60374,6 +60389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 947323955}
+  isSpecial: 0
   anotherDoor: {fileID: 0}
 --- !u!61 &2058880843
 BoxCollider2D:
