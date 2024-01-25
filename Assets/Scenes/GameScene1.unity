@@ -3161,7 +3161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062404755944534166, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -883
+      value: -824.1
       objectReference: {fileID: 0}
     - target: {fileID: 5062404755944534166, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -42563,7 +42563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392173427108977135, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4394016819371649868, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_IsActive
@@ -42571,11 +42571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062404755944534166, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 185.7
+      value: 189.7
       objectReference: {fileID: 0}
     - target: {fileID: 5062404755944534166, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -401.5
+      value: -376.7
       objectReference: {fileID: 0}
     - target: {fileID: 7343539718040630449, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43290,7 +43290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062404755944534166, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -402
+      value: -389.4
       objectReference: {fileID: 0}
     - target: {fileID: 7343539718040630449, guid: f274b1bc4a7469947924cccd74f3606d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43467,7 +43467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1357967459
 AudioListener:
   m_ObjectHideFlags: 0
