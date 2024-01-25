@@ -181,7 +181,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("sced");
             SaveSystem.Instance.SavePos(transform.position);
+            SaveSystem.Instance.SetCurrentAnim();
             OnSaving?.Invoke();
+            SaveSystem.Instance.SaveAnimation();
         }
     }
     private void FixedUpdate()
