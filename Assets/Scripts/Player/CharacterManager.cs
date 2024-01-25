@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : PersistentSingleton<CharacterManager>
+public class CharacterManager : Singleton<CharacterManager>
 {
     public AudioData splitSFX;
     public GameObject characterPrefab;
