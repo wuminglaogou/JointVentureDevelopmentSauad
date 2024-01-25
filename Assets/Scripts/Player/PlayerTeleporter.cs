@@ -12,7 +12,7 @@ public class PlayerTeleporter : MonoBehaviour
     private float disableCounter;
     public bool disableTeleporter;//表示能否传送
     public float findDistance;
-    public GameObject[] doors=new GameObject[6];
+    public GameObject[] doors=new GameObject[12];
 
     void Update()
     {
@@ -62,7 +62,7 @@ public class PlayerTeleporter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            for (int i = 0;i<6; i++)
+            for (int i = 0;i<12; i++)
             {
                 if (gameObject[i].tag == "TeleporterDoor" && Vector2.Distance(gameObject[i].transform.position, transform.position) <= findDistance)
                 {
