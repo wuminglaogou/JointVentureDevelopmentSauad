@@ -25,6 +25,7 @@ public class SaveSystem : PersistentSingleton<SaveSystem>
         if(data.vector3Data!=null)
         {
             Debug.Log("enter");
+            CharacterManager.Instance.ClearToOnePlayer();
             LoadCamera();
             CharacterManager.Instance.characters[0].gameObject.SetActive(true);
             CharacterManager.Instance.characters[0].gameObject.GetComponent<PlayAnimation>().Save();
