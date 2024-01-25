@@ -179,9 +179,11 @@ public class PlayerController : MonoBehaviour
     {
         if(canSave)
         {
-            Debug.Log("sced");
             SaveSystem.Instance.SavePos(transform.position);
+            SaveSystem.Instance.SetCurrentAnim();
+            SaveSystem.Instance.SaveCamera();
             OnSaving?.Invoke();
+            SaveSystem.Instance.SaveAnimation();
         }
     }
     private void FixedUpdate()
