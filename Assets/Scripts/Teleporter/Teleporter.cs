@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private Transform destination;
+    public bool isSpecial = false;
     private Boolean isActive=true;
     public GameObject anotherDoor;
     public Transform GetDestination()//用于获取目标传送点位置
@@ -15,12 +16,20 @@ public class Teleporter : MonoBehaviour
     }
     public void Appear()
     {
-        gameObject.SetActive(isActive);
-        isActive = !isActive;
+        if(!isSpecial)
+        {
+            gameObject.SetActive(isActive);
+            isActive = !isActive;
+        }
+        
     }
     public void TurnOnAnother(GameObject anotherDoor)
     {
-        gameObject.SetActive(!isActive);
+        if (!isSpecial)
+        {
+            gameObject.SetActive(!isActive);
+        }
+        
     }
    
 }

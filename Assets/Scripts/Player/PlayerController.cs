@@ -6,10 +6,12 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("状态")]
+    public bool isDead=false;
     public float faceDir;
     public float PlayerSize;
     public bool isaddjump = false;
@@ -134,6 +136,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        isDead= false;
         inputcontrol.Enable();
     }
     private void OnDisable()
@@ -148,7 +151,11 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
-
+        if(isDead)
+        {
+            rb.velocity=new Vector2(0,rb.velocity.y);
+            inputcontrol.Disable();
+        }
         //if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
         //AccelerateStopingmove();
 
@@ -169,17 +176,20 @@ public class PlayerController : MonoBehaviour
 
     private void Split(InputAction.CallbackContext context)
     {
-        issplit = true;
-        Vector2 mousePositionViewportSpace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePos=(mousePositionViewportSpace-new Vector2(transform.position.x,transform.position.y)).normalized;
-        CharacterManager.Instance.Split(transform.position, mousePos);
+        if(!isDead)
+        {
+            issplit = true;
+            Vector2 mousePositionViewportSpace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos = (mousePositionViewportSpace - new Vector2(transform.position.x, transform.position.y)).normalized;
+            CharacterManager.Instance.Split(transform.position, mousePos);
+        }
+        
         
     }
     private void SavePos(InputAction.CallbackContext context)
     {
         if(canSave)
         {
-            Debug.Log("sced");
             SaveSystem.Instance.SavePos(transform.position);
             SaveSystem.Instance.SetCurrentAnim();
             SaveSystem.Instance.SaveCamera();
@@ -203,7 +213,7 @@ public class PlayerController : MonoBehaviour
     //}
     private void Jump(InputAction.CallbackContext context)
     {
-        if (isActive)
+        if (isActive&&!isDead)
         {
             if (physicalcheck1.isGround)
             {
@@ -269,6 +279,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        isDead = true;
         AudioManager.Instance.PlayAudio(dieSFX);
         CharacterManager.Instance.CharacterDie(this);
     }

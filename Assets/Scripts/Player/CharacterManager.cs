@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : PersistentSingleton<CharacterManager>
+public class CharacterManager : Singleton<CharacterManager>
 {
     public AudioData splitSFX;
     public GameObject characterPrefab;
@@ -100,11 +100,19 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
                 characters.Remove(toRemove);
                 Destroy(self.gameObject);
                 bool isActive = false;
-                foreach (var character in characters)
+                //foreach (var character in characters)
+                //{
+                //    if(character.enabled==true)
+                //    {
+                //        isActive = true;
+                //    }
+                //}
+                for(int i=0; i<characters.Count; i++)
                 {
-                    if(character.enabled==true)
+                    if (characters[i].enabled==true)
                     {
                         isActive = true;
+                        activeCharacterIndex = i;
                     }
                 }
                 if(isActive==false)

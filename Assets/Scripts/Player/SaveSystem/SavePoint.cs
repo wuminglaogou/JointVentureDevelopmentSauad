@@ -12,7 +12,6 @@ public class SavePoint : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("enterSuccess");
             canvas.enabled = true;
             SaveSystem.Instance.animPossbleToSet = anim;
             SaveSystem.Instance.cameraPossbleToSet= cam;
