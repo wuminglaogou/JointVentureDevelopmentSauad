@@ -43,7 +43,7 @@ public class MainMenuUIManager : MonoBehaviour
     private void QuitGame()
     {
         AudioManager.Instance.PlayAudio(clickSound);
-        Debug.Log("QuitGame");
+        Application.Quit();
     }
 
     private void StartGame()
