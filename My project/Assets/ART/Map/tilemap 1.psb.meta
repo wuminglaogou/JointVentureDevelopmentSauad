@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7faad4090af89f2488f7c263f6f66c90
+guid: d82cef8e7f036554984ee0d6766c05f6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,7 +23,7 @@ ScriptedImporter:
     normalMapFilter: 0
     flipGreenChannel: 0
     swizzle: 50462976
-    isReadable: 0
+    isReadable: 1
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
@@ -96,15 +96,15 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: tilemap_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 15
-      y: 211
+      y: 212
       width: 24
-      height: 24
+      height: 25
     spriteID: 1daca0f104b60894e829eb8462bb6315
     spriteBone: []
     spriteOutline: []
@@ -113,7 +113,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 15, y: 211}
+    uvTransform: {x: 15, y: 212}
     spritePosition: {x: 0, y: 0}
   - name: tilemap_1
     originalName: 
