@@ -19,6 +19,5 @@ public class CameraChanger : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         camerachanger0.SetActive(false);
-        camerachanger1.SetActive(true);
     }
 }

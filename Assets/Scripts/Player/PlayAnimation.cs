@@ -31,6 +31,7 @@ public class PlayAnimation : MonoBehaviour
     public void Die()
     {
         Debug.Log("die");
+        playerController.isDead = true; 
         anim.SetBool("isdead", true);
     }
     public void Save()
