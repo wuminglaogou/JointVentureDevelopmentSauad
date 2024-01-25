@@ -151,7 +151,11 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 3.5f;
         Trans(Box);
         issplit = false;
-
+        if(isDead)
+        {
+            rb.velocity=new Vector2(0,rb.velocity.y);
+            inputcontrol.Disable();
+        }
         //if(inputdirection.x==0&&(XAccelerate==true||YAccelerate==true))
         //AccelerateStopingmove();
 
@@ -209,7 +213,7 @@ public class PlayerController : MonoBehaviour
     //}
     private void Jump(InputAction.CallbackContext context)
     {
-        if (isActive)
+        if (isActive&&!isDead)
         {
             if (physicalcheck1.isGround)
             {
