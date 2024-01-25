@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class CharacterManager : PersistentSingleton<CharacterManager>
 {
+    public AudioData splitSFX;
     public GameObject characterPrefab;
     public List<PlayerController> characters;
     public int activeCharacterIndex = 0;
     public float buffetTime = 0.5f;
     public float vectorForce = 10f;
     public Vector2 speed;
+    public void ClearToOnePlayer()
+    {
+        if(characters.Count > 0)
+        {
+            for(int i = characters.Count - 1; i >= 0; i--)
+            {
+                if (characters[i].enabled==false)
+                {
+                    Destroy(characters[i].gameObject);
+                    characters.RemoveAt(i);
+                }
+            }
+            activeCharacterIndex = 0;
+            characters[0].enabled = true;
+        }
+    }
     public void Split(Vector3 postion,Vector2 dir)
     {
         if(characters.Count==3)
         {
             return;
         }
+        AudioManager.Instance.PlayAudio(splitSFX);
         characters[activeCharacterIndex].enabled = false;
         // 创建新角色实例
         Vector3 newPos=new Vector3(postion.x,postion.y+1,postion.z);
@@ -81,8 +99,19 @@ public class CharacterManager : PersistentSingleton<CharacterManager>
             {
                 characters.Remove(toRemove);
                 Destroy(self.gameObject);
-                activeCharacterIndex = 0;
-                characters[activeCharacterIndex].enabled = true;
+                bool isActive = false;
+                foreach (var character in characters)
+                {
+                    if(character.enabled==true)
+                    {
+                        isActive = true;
+                    }
+                }
+                if(isActive==false)
+                {
+                    activeCharacterIndex = 0;
+                    characters[activeCharacterIndex].enabled = true;
+                }          
             }
         }
 
