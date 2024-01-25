@@ -34,8 +34,9 @@ public class SaveSystem : PersistentSingleton<SaveSystem>
     public void LoadCamera()
     {
         GameObject previousCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        if(previousCamera!=currentCamera)
+        if(previousCamera!=currentCamera.gameObject)
         {
+            Debug.Log("enter");
             currentCamera.gameObject.SetActive(true);
             previousCamera.SetActive(false);
             previousCamera.tag = "Untagged";
